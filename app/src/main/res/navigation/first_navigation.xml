@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_navigation"
+    app:startDestination="@id/appFragment">
+
+    <fragment
+        android:id="@+id/appFragment"
+        android:name="com.example.permissionsafer.Navigation.AppFragment"
+        android:label="@string/应用管理"
+        tools:layout="@layout/fragment_app" />
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.permissionsafer.Navigation.DownloadFragment"
+        android:label="@string/网络管理"
+        tools:layout="@layout/fragment_download" />
+    <fragment
+        android:id="@+id/manageFragment"
+        android:name="com.example.permissionsafer.Navigation.ManageFragment"
+        android:label="@string/可信管理"
+        tools:layout="@layout/fragment_manage" />
+</navigation>

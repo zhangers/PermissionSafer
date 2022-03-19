@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">PermissionSafer</string>
     <string name="loading">Loading . . .</string>
+    <string name="应用管理">应用管理</string>
+    <string name="网络管理">网络管理</string>
+    <string name="可信管理">可信管理</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank2_fragment">hello_blank2_fragment</string>
+    <string name="hello_blank1_fragment">hello_blank1_fragment</string>
 </resources>

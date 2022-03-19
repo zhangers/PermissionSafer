@@ -15,10 +15,17 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
+    // 定义全局变量
+    public static MainActivity instance = null;
+
+// onCreate方法中赋值
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        instance = this;
         Log.e("start_page","TOASTED");
         Toast.makeText(this, "欢迎使用用户行为监测系统", Toast.LENGTH_LONG).show();
         Log.e("start_page","STARTED");
