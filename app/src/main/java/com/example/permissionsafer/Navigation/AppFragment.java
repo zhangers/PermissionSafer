@@ -1,18 +1,22 @@
 package com.example.permissionsafer.Navigation;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.media.Image;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.permissionsafer.Adapter.Application;
 import com.example.permissionsafer.Adapter.ApplicationAdapter;
@@ -80,10 +84,28 @@ public class AppFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_app, container, false);
-        listView=view.findViewById(R.id.AppShow);
+        ListView listView=(ListView) view.findViewById(R.id.AppShow);
         List<Application> AppInfo=new GetAppInfo().allPackage(getContext());
-        applicationAdapter=new ApplicationAdapter(getActivity(),R.layout.application_item,AppInfo);
+        ApplicationAdapter applicationAdapter=new ApplicationAdapter(getActivity(),R.layout.application_item,AppInfo);
         listView.setAdapter(applicationAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Application application=AppInfo.get(position);
+                Log.e("listview","click"+position);
+                new AlertDialog.Builder(getContext())
+                        .setTitle("申请的相关权限")
+                        .setMessage("点击的第"+(position+1)+"个应用")
+                        .setNeutralButton("关闭", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        }).show();
+            }
+        });
+
         return view;
     }
 
