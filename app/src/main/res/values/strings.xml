@@ -8,4 +8,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_blank2_fragment">hello_blank2_fragment</string>
     <string name="hello_blank1_fragment">hello_blank1_fragment</string>
+    <string name="todo">TODO</string>
 </resources>
