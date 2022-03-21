@@ -8,6 +8,7 @@ import android.content.pm.PermissionInfo;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 
+import com.ashokvarma.bottomnavigation.utils.Utils;
 import com.example.permissionsafer.Adapter.Application;
 import com.example.permissionsafer.R;
 
@@ -52,4 +53,5 @@ public class GetAppInfo {
         }
         return InfoList;
     }
+
 }

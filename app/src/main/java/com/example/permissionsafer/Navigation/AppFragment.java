@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
+import android.graphics.Color;
+import android.icu.text.RelativeDateTimeFormatter;
 import android.media.Image;
 import android.os.Bundle;
 
@@ -23,6 +25,7 @@ import com.example.permissionsafer.Adapter.ApplicationAdapter;
 import com.example.permissionsafer.MainActivity;
 import com.example.permissionsafer.R;
 import com.example.permissionsafer.function.GetAppInfo;
+import com.example.permissionsafer.function.GetPermissionInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -89,14 +92,18 @@ public class AppFragment extends Fragment implements View.OnClickListener {
         ApplicationAdapter applicationAdapter=new ApplicationAdapter(getActivity(),R.layout.application_item,AppInfo);
         listView.setAdapter(applicationAdapter);
 
+        //View DangerAPP = listView.getChildAt(0);
+        //DangerAPP.findViewById(R.id.app_name).setBackgroundColor(Color.GRAY);
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Application application=AppInfo.get(position);
                 Log.e("listview","click"+position);
+                String result=new GetPermissionInfo().permissionInfo(getContext(),application.getPackageName());
                 new AlertDialog.Builder(getContext())
-                        .setTitle("申请的相关权限")
-                        .setMessage("点击的第"+(position+1)+"个应用")
+                        .setTitle("权限安全性")
+                        .setMessage(result)
                         .setNeutralButton("关闭", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

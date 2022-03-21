@@ -19,10 +19,12 @@
         <entry key="..\:/Users/27011601/Desktop/PermissionSafer/app/src/main/res/layout/main_navigation.xml" value="0.358695652173913" />
         <entry key="..\:/Users/27011601/Desktop/PermissionSafer/app/src/main/res/menu/main_navigation.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/27011601/Desktop/PermissionSafer/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.14" />
+        <entry key="..\:/zhangyiming1/Desktop/PermissionSafer/PermissionSafer/app/src/main/res/layout/application_item.xml" value="0.353713768115942" />
+        <entry key="..\:/zhangyiming1/Desktop/PermissionSafer/PermissionSafer/app/src/main/res/layout/fragment_app.xml" value="0.35688405797101447" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
